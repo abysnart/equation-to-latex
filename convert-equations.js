@@ -1,9 +1,9 @@
 module.exports = {
 	convert: function(string, skip) {
 		// net 9 \((?:[^()]|\((?:[^()]|\((?:[^()]|\((?:[^()]|\((?:[^()]|\((?:[^()]|\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\))*\))*\))*\))*\))*\))*\)
-	 string = this.escape_html(string);
-    if(!skip) {
-    	let data = string.match(/latex\((?:[^()]|\((?:[^()]|\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\))*\))*\)/g), tmp;
+	 	string = this.escape_html(string);
+		if(!skip) {
+			let data = string.match(/latex\((?:[^()]|\((?:[^()]|\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\))*\))*\)/g), tmp;
 			if(data) {
 				let length = data.length;
 				for (let i = 0; i < length; i++) {
@@ -13,7 +13,7 @@ module.exports = {
 					}
 				}
 			}
-    } else string = this.equation_to_latex(string);
+		} else string = this.equation_to_latex(string);
 		return string
 	},
 	escape_html: function(text) {
